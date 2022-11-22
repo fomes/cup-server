@@ -9,7 +9,6 @@ import { usersRoutes } from "./routes/users";
 import { guessRoutes } from "./routes/guess";
 
 const port = process.env.PORT;
-const secret = process.env.SECRET;
 
 async function bootstrap() {
   const fastify = Fastify({
@@ -21,7 +20,7 @@ async function bootstrap() {
   });
 
   await fastify.register(jwt, {
-    secret,
+    secret: "FfGg99",
   });
 
   await fastify.register(authRoutes);
